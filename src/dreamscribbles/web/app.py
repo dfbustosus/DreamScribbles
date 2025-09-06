@@ -1,4 +1,4 @@
-import gradio as gr  # type: ignore[import-untyped]
+import gradio as gr
 import numpy as np
 from PIL import Image
 
@@ -53,7 +53,7 @@ def launch_minimal(settings=None):
     iface = gr.Interface(
         fn=generate_image,
         inputs=[
-            gr.Image(tool="sketch", label="Scribble"),
+            gr.Sketchpad(label="Scribble", height=512),
             gr.Textbox(label="What are you drawing?", value="a cute house with a garden"),
             gr.Dropdown(choices=list_styles(), value=list_styles()[0], label="Style"),
             gr.Textbox(label="Negative prompt", value=NEGATIVE_PROMPT_DEFAULT),
