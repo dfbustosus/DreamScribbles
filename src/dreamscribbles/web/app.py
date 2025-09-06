@@ -1,4 +1,4 @@
-import gradio as gr
+import gradio as gr  # type: ignore[import-untyped]
 import numpy as np
 from PIL import Image
 
