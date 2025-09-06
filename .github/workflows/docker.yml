@@ -1,0 +1,14 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  docker-cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build CPU image
+        run: |
+          docker build -f docker/Dockerfile.cpu -t dreamscribbles:ci .
